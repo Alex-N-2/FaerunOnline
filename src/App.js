@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
+
+import { MapProvider } from "./Context/mapContext";
+
+//import TownDialog from "./TownDialog";
+import MapOuter from "./Components/MapOuter";
+import MousePointerHandler from "./Components/MousePointer";
+import ClickHandler from "./Components/ClickHandler";
+import CreatePopup from "./Components/Popup";
+import PopupParser from "./Components/PopupParser";
+import IntroModal from "./Components/IntroModal";
 
 function App() {
+
+  console.log("App started")
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MapProvider>
+      <div className="App">
+
+        {/*<TownDialog town={featureSelected} setTown={setFeatureSelected} />
+        {/* The TownDialog component uses the featureSelected state variable to display information about the selected feature. 
+        It also uses the setFeatureSelected function to update the selected feature state when closing the dialog). */}
+        <IntroModal/>
+        <MousePointerHandler/>
+        <ClickHandler/>
+        <PopupParser/>
+        <CreatePopup/>     
+        <MapOuter/>
+
+      </div>
+    </MapProvider>
   );
 }
 

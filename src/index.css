@@ -1,4 +1,5 @@
 body {
+  padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,7 +8,125 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+h3 {
+  font-size: 18px;
+  /* font-family: Lato, sans-serif; */
+  font-family: "Historical-FellTypeRomanSC";
+  line-height: 0;
+  letter-spacing: 0.3px;
 }
+
+p {
+  font-size: 14px;
+  font-family: Merriweather, serif;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.serifText {
+  font-size: 13px;
+  font-family: Lato, sans-serif;
+}
+
+
+  
+
+
+/* This is the map container itself. */
+.map-container {
+  height: 100%;
+  width: 100%;
+  cursor: grab;
+}
+
+/* This is the container for the map container. */
+.mapOuter {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* This is currently unused but will define general properties common to all windows */
+.window {
+  background: bisque;
+  border: 3px solid sienna;
+}
+
+
+
+.button-row {
+  display: flex; /* Use flexbox layout */
+  justify-content: flex-end; /* Align items to the end of the flex container */
+  position: absolute; /* Position the button row absolutely */
+  bottom: 10px; /* Distance from the bottom of the container */
+  right: 10px; /* Distance from the left of the container */
+}
+
+.circular-button {
+  border-radius: 50%; /* Makes the button circular */
+  width: 40px; /* Adjust width to your preference */
+  height: 40px; /* Adjust height to your preference */
+  margin-left: 10px; /* Add some spacing between buttons */
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(95, 95, 95, 0.75);
+  transition: transform 0.05s ease; /* Add transition effect */
+
+}
+
+.circular-button:hover {
+  transform: scale(1.05); /* Scale up the button when hovered */
+}
+
+.circular-button:active {
+  transform: scale(0.95); /* Scale down the button when clicked */
+}
+
+
+/* Mapbox Popup Styles */
+
+.mapboxgl-popup-content{
+  background-color: bisque;
+  border: 3px solid sienna;
+  border-radius: 6px;
+  padding-left: 10px;
+  padding-right: 25px;  
+  padding-top: 0px;
+  padding-bottom: 0px;
+  white-space: nowrap;
+  line-height: 0.5;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color: sienna;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color: sienna;
+}
+
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: sienna;
+}
+
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color: sienna;
+}
+
+
+.mapboxgl-ctrl-group {
+  background-color: bisque;
+}
+
+/* .mapboxgl-ctrl button:not(:disabled):hover{
+  background-color: rgb(245, 218, 186);
+} */
